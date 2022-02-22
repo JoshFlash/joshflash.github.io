@@ -1,7 +1,7 @@
-﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400&display=swap');
 
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
 }
 
 h1:focus {
@@ -16,6 +16,61 @@ a, .btn-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.card {
+    border-radius: 0px;
+}
+
+.shadow {
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.shadow-no-hover {
+    box-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.shadow-hover {
+    box-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.8) !important;
+}
+
+.bg-image-dev {
+    background-image: url(../assets/img/public-backgrounds/bg-image-dev.jpeg);
+    background-repeat: repeat;
+}
+
+.min-vh-90 {
+    min-height: 90vh !important;
+}
+
+.bg-white-94 {
+    background-color: rgba(255, 255, 255, 0.94);
+}
+
+.bg-black-80 {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 992px) {
+    .md-and-smaller-my-3 {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .bg-image-dev {
+        background-image: url(../assets/img/public-backgrounds/bg-image.jpeg);
+        background-repeat: repeat-y;
+    }
+}
+
+@media (min-width: 992px) {
+    .md-f-size-1-5 {
+        font-size: 1.5rem;
+    }
 }
 
 .content {
