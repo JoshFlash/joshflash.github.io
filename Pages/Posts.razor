@@ -2,23 +2,49 @@
 @page "/posts"
 
 <main class="bg-image-dev ">
-
 <Navbar/>
 
-<div class="min-vh-100 py-5 px-4">
-    <div class="row g-0">
-        <div class="col-lg-4">
-            @*TODO*@
-        </div>
-        <h1 class="text-light text-opacity-75">Projects</h1>
-        <div class="row">
-            <CardPost />
-            <CardPost />
+<div class="d-flex flex-column w-100 min-vh-100 justify-content-center align-items-center">
+    <div class="container g-0 ">
+        <div class="row g-0">
+            <h1 class="text-light text-opacity-75">Projects</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card bg-black-80 text-light text-opacity-75 mb-2">
+                        <img src="assets/img/gamepad-01.jpg" class="card-img-top" alt="post thumbnail image"/>
+                        <div class="card-body">
+                            <h3 class="card-title">Tattva Trading Card Game</h3>
+                            <p class="card-text">A Unity Trading Card Game in Development</p>
+                        </div>
+                        <a href="/" class="btn btn-primary stretched-link">View</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-black-80 text-light text-opacity-75 mb-2">
+                        <img src="assets/img/gamepad-01.jpg" class="card-img-top" alt="post thumbnail image"/>
+                        <div class="card-body">
+                            <h3 class="card-title">Tween Key</h3>
+                            <p class="card-text">An efficient Unity Tweening library</p>
+                        </div>
+                        <a href="https://github.com/JoshFlash/TweenKey" class="btn btn-primary stretched-link">View</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-black-80 text-light text-opacity-75 mb-2">
+                        <img src="assets/img/gamepad-01.jpg" class="card-img-top" alt="post thumbnail image"/>
+                        <div class="card-body">
+                            <h3 class="card-title">Spell Sword</h3>
+                            <p class="card-text">A Top-Down Action Adventure Prototype</p>
+                        </div>
+                        <a href="/" class="btn btn-primary stretched-link">View</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<Footer />
+<Footer/>
 
 </main>
 

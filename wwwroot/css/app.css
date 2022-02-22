@@ -39,7 +39,7 @@ a, .btn-link {
 }
 
 .bg-image-dev {
-    background-image: url(../assets/img/public-backgrounds/bg-image-dev.jpeg);
+    background-image: url(../assets/img/public-backgrounds/bg-image-dev.jpg);
     background-repeat: repeat;
 }
 
@@ -62,7 +62,7 @@ a, .btn-link {
     }
 
     .bg-image-dev {
-        background-image: url(../assets/img/public-backgrounds/bg-image.jpeg);
+        background-image: url(../assets/img/public-backgrounds/bg-image.jpg);
         background-repeat: repeat-y;
     }
 }
