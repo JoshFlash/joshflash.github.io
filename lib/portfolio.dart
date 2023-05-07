@@ -78,7 +78,7 @@ class PortfolioPage extends StatelessWidget {
             itemCount: gameCards.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: crossCount,
-              childAspectRatio: 2 / 1,
+              childAspectRatio: isVertical ? 1.5 : 2 / 1,
               crossAxisSpacing: 16,
               mainAxisSpacing: 16,
             ),

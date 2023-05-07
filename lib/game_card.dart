@@ -47,6 +47,20 @@ class GameCard extends StatelessWidget {
       ),
     );
   }
+  
+  double _calculateFontSize(BoxConstraints constraints,
+      {double minFontSize = 12, double maxFontSize = 16}) {
+    double fontSize = maxFontSize;
+
+    if (constraints.maxWidth < 120) {
+      fontSize = minFontSize;
+    } else if (constraints.maxWidth < 180) {
+      fontSize = maxFontSize - 2;
+    }
+
+    return fontSize;
+  }
+
 
   Widget buildHorizontalLayout() {
     return Row(
@@ -55,36 +69,61 @@ class GameCard extends StatelessWidget {
         Image.network(imageUrl, fit: BoxFit.cover, width: 200),
         const SizedBox(width: 10),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AutoSizeText(gameTitle, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold), minFontSize: 16, maxFontSize: 20),
-              const SizedBox(height: 5),
-              AutoSizeText('Role: $role', style: const TextStyle(fontSize: 16), minFontSize: 12, maxFontSize: 16),
-              const SizedBox(height: 5),
-              AutoSizeText('$platformTarget', style: const TextStyle(fontSize: 16), minFontSize: 12, maxFontSize: 16),
-            ],
+          child: LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(gameTitle,
+                      style: TextStyle(
+                          fontSize: _calculateFontSize(constraints, minFontSize: 14, maxFontSize: 18),
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 5),
+                  Text('Role: $role',
+                      style: TextStyle(
+                          fontSize: _calculateFontSize(constraints))),
+                  const SizedBox(height: 5),
+                  Text('$platformTarget',
+                      style: TextStyle(
+                          fontSize: _calculateFontSize(constraints))),
+                ],
+              );
+            },
           ),
         ),
       ],
     );
   }
 
+
   Widget buildVerticalLayout() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.network(imageUrl, fit: BoxFit.cover, height: 120),
+        Image.network(imageUrl, fit: BoxFit.cover, height: 180),
         const SizedBox(height: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AutoSizeText(gameTitle, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold), minFontSize: 12, maxFontSize: 16),
-            const SizedBox(width: 5),
-            AutoSizeText('Role: $role', style: const TextStyle(fontSize: 16), minFontSize: 12, maxFontSize: 16),
-            const SizedBox(width: 5),
-            AutoSizeText('$platformTarget', style: const TextStyle(fontSize: 16), minFontSize: 12, maxFontSize: 16),
-          ],
+        Expanded(
+          child: LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(gameTitle,
+                      style: TextStyle(
+                          fontSize: _calculateFontSize(constraints, minFontSize: 14, maxFontSize: 18),
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 5),
+                  Text('Role: $role',
+                      style: TextStyle(
+                          fontSize: _calculateFontSize(constraints))),
+                  const SizedBox(height: 5),
+                  Text('$platformTarget',
+                      style: TextStyle(
+                          fontSize: _calculateFontSize(constraints))),
+                ],
+              );
+            },
+          ),
         ),
       ],
     );
