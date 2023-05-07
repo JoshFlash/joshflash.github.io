@@ -22,6 +22,33 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class ResponsiveText extends StatelessWidget {
+  final String text;
+  final TextStyle style;
+
+  const ResponsiveText({Key? key, required this.text, required this.style})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    double updatedFontSize = style.fontSize!;
+
+    if (screenWidth <= 600) {
+      updatedFontSize -= 4;
+    } else if (screenWidth <= 900) {
+      updatedFontSize -= 2;
+    }
+
+    return Text(
+      text,
+      style: style.copyWith(fontSize: updatedFontSize),
+    );
+  }
+}
+
+
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -50,18 +77,21 @@ class MyHomePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                      AutoSizeText(
-                        "Hello, I'm Josh Flash, an innovative game developer from Auckland, New Zealand, passionate about crafting immersive experiences that inspire and connect players.",
+                      ResponsiveText(
+                        text:
+                            "Hello, I'm Josh Flash, an innovative game developer from Auckland, New Zealand, passionate about crafting immersive experiences that inspire and connect players.",
                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 20),
-                      AutoSizeText(
-                        "Driven by my belief in the transformative power of games, I combine creativity and technical expertise to push boundaries in the gaming industry. I am eager to contribute my skills to exciting new projects and collaborate with visionary teams.",
+                      ResponsiveText(
+                        text:
+                            "Driven by my belief in the transformative power of games, I combine creativity and technical expertise to push boundaries in the gaming industry. I am eager to contribute my skills to exciting new projects and collaborate with visionary teams.",
                         style: TextStyle(fontSize: 16),
                       ),
                       SizedBox(height: 20),
-                      AutoSizeText(
-                        "Explore my portfolio to see how my dedication to excellence and engaging storytelling can bring your gaming vision to life. Let's create memorable experiences together!",
+                      ResponsiveText(
+                        text:
+                            "Explore my portfolio to see how my dedication to excellence and engaging storytelling can bring your gaming vision to life. Let's create memorable experiences together!",
                         style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
                       ),
                     ],
@@ -84,7 +114,7 @@ class MyHomePage extends StatelessWidget {
                 ),
                 child: const AutoSizeText(
                   'Explore My Portfolio',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ),
                 const SizedBox(height: 20),
