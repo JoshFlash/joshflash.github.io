@@ -70,10 +70,9 @@ class MyHomePage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 64),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: SizedBox(
-                  // set the max with
-                  width: 540,
+                  width: 540 * (MediaQuery.of(context).size.width < 600 ? 0.75 : 1),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
